@@ -1,0 +1,3 @@
+const chiste = () => { 
+    alert ("chiste")
+}
