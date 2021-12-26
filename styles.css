@@ -1,0 +1,14 @@
+.centro{
+    margin: auto;
+    width: 40rem;
+    height: 40rem;
+    background: beige;
+    
+    
+    }
+
+.boton{
+    width: 8rem;
+    height: 4rem;
+    color: blue;
+}
