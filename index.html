@@ -10,9 +10,14 @@
 <body>
 <div class="centro">
     <h1>Preparat per riure? :)</h1>
-
+    <h3 id="weatherTexto"></h3>
     <p id="chisteTexto"></p>
-    <button class="boton" onclick= jokeFetch()> Chiste</button>
+    <button class="botonScore" onclick=rateJoke(1)>1</button>
+    <button class="botonScore" onclick=rateJoke(2)>2</button>
+    <button class="botonScore" onclick=rateJoke(3)>3</button>
+    <br>
+    <br>
+    <button class="botonGeneradorChiste" onclick= jokeFetch()> Chiste</button>
 </div>
     
     <script src="main.js"></script>
