@@ -10,6 +10,26 @@ const jokeFetch = async () => {
     chisteTexto.textContent = chisteFinale;
     return lastJoke = chisteFinale;
 }
+
+const chuckFetch = async () => {
+    const response = await fetch("https://api.chucknorris.io/jokes/random", {
+        headers: {
+            'Accept': 'application/json'
+        }
+    })
+    const chuck = await response.json();
+    let chuckFinale = chuck.value;
+    const chisteTexto = document.getElementById("chisteTexto");
+    chisteTexto.textContent = chuckFinale;
+    return lastJoke = chuckFinale;
+}
+
+const randomJoke = () => {
+    let dados = Math.floor(Math.random() * 2)
+    let result = (dados == 0) ? jokeFetch() : chuckFetch()
+}
+
+
 let reportJokes = []
 let lastJoke;
 
@@ -28,15 +48,16 @@ const rateJoke = (newScore) => {
     }
 }
 
-const weatherFetch = async ()=>{
+const weatherFetch = async () => {
     const response = await fetch("https://api.openweathermap.org/data/2.5/weather?id=3128760&units=metric&appid=38a66e799dc1be392da713ec1a07203a")
     const weather = await response.json();
-    const temperature = weather.main.temp ;
+    const temperature = weather.main.temp;
     const weatherTexto = document.getElementById("weatherTexto");
-    weatherTexto.textContent =`La temperatura en Barcelona es :${temperature} º` 
+    weatherTexto.textContent = `La temperatura en Barcelona es :${temperature} º `
     console.log(temperature);
 }
-window.addEventListener("load", weatherFetch() );
+window.addEventListener("load", weatherFetch());
 
-  
+
+
 
