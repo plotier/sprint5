@@ -25,8 +25,16 @@ const chuckFetch = async () => {
 }
 
 const randomJoke = () => {
-    let dados = Math.floor(Math.random() * 2)
-    let result = (dados == 0) ? jokeFetch() : chuckFetch()
+    const backgroundPic = document.getElementById("backgroundPic")
+    //estos ternarios alternan las clases y cambian el background
+    backgroundPic.classList.contains('switchBackground') ? backgroundPic.classList.replace('switchBackground', 'secondBackground')
+        : backgroundPic.classList.replace('secondBackground', 'thirdBackground');
+
+    backgroundPic.classList.contains('thirdBackground') ? backgroundPic.classList.replace('thirdBackground', 'fourthBackground')
+        : backgroundPic.classList.replace('fourthBackground', 'switchBackground');
+    //Si el resultado es par, ejecuta broma random, si no, de Chuck Norris
+    let dados = Math.floor(Math.random() * 6)
+    let result = (dados % 2 == 0) ? jokeFetch() : chuckFetch()
 }
 
 
@@ -53,10 +61,14 @@ const weatherFetch = async () => {
     const weather = await response.json();
     const temperature = weather.main.temp;
     const weatherTexto = document.getElementById("weatherTexto");
+    // const iconcode = weather.weather[0].icon;
+    // let iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
+    // const per = document.getElementById("wicon")
+
     weatherTexto.textContent = `La temperatura en Barcelona es :${temperature} º `
     console.log(temperature);
 }
-window.addEventListener("load", weatherFetch());
+window.addEventListener("load", weatherFetch(),);
 
 
 
