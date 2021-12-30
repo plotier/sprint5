@@ -37,12 +37,24 @@ h1{
 h5{
     max-width: 40rem;
 }
-#weatherTexto{
+
+.weatherPosition{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin: unset;
+}
+.weatherPosition div {
     margin:0;
+}
+.weatherPosition div h3{
+    margin:0;
+    margin-top: 2rem;
 }
 
 .botonContainer{
     flex-direction: row;
+    justify-content: flex-start;
 }
 .botonScore {
     width: 4rem;

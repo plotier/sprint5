@@ -61,11 +61,10 @@ const weatherFetch = async () => {
     const weather = await response.json();
     const temperature = weather.main.temp;
     const weatherTexto = document.getElementById("weatherTexto");
-    // const iconcode = weather.weather[0].icon;
-    // let iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
-    // const per = document.getElementById("wicon")
-
-    weatherTexto.textContent = `La temperatura en Barcelona es :${temperature} º `
+    const iconcode = weather.weather[0].icon;
+    let iconurl =`https://openweathermap.org/img/wn/${iconcode}@2x.png`
+    document.getElementById("wicon").src = iconurl
+    weatherTexto.textContent = `Barcelona ${temperature} º C`
     console.log(temperature);
 }
 window.addEventListener("load", weatherFetch(),);
