@@ -64,7 +64,7 @@ const weatherFetch = async () => {
     const iconcode = weather.weather[0].icon;
     let iconurl =`https://openweathermap.org/img/wn/${iconcode}@2x.png`
     document.getElementById("wicon").src = iconurl
-    weatherTexto.textContent = `Barcelona ${temperature} º C`
+    weatherTexto.textContent = `${temperature} º C`
     console.log(temperature);
 }
 window.addEventListener("load", weatherFetch(),);
