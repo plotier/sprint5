@@ -55,7 +55,7 @@ const rateJoke = (newScore) => {
         console.log(reportJokes)
     }
 }
-
+//API del clima openweathermap.org
 const weatherFetch = async () => {
     const response = await fetch("https://api.openweathermap.org/data/2.5/weather?id=3128760&units=metric&appid=38a66e799dc1be392da713ec1a07203a")
     const weather = await response.json();
